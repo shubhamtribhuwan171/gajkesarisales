@@ -1,0 +1,238 @@
+.reportContainer {
+    width: 100%;
+    padding: 1rem;
+}
+
+.reportTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.filterCard {
+    background: white;
+    margin-bottom: 1.5rem;
+}
+
+.filterControls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.filterItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filterItem label {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+.selectTrigger, .datePickerButton {
+    border-color: #d1d5db;
+}
+
+.resultsArea {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.resultsContent {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    text-align: center;
+}
+
+.salesSummaryText {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+}
+
+.salesSummaryText h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.salesSummaryText p {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.totalTons {
+    font-size: 1.1rem;
+    color: #16a34a;
+    margin-top: 0.5rem;
+}
+
+.totalTons strong {
+    font-weight: 700;
+}
+
+.dataGrid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 1280px) {
+    .dataGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.summaryCard {
+    background: white;
+    height: fit-content;
+}
+
+.summaryMetric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.metricPrimary {
+    background: hsl(var(--primary) / 0.1);
+}
+
+.metricSecondary {
+    background: hsl(var(--muted) / 0.3);
+}
+
+.chartContainer {
+    width: 100%;
+    min-height: 300px;
+    padding: 1rem 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.fullWidthCard {
+    grid-column: 1 / -1;
+}
+
+.datePickerButton {
+    width: 100%;
+    justify-content: start;
+    text-align: left;
+    font-normal: normal;
+}
+
+.loadingContainer, .errorContainer, .promptMessage {
+    color: #6b7280;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 2rem;
+    width: 100%;
+}
+
+.errorContainer {
+    color: #dc2626;
+}
+
+.errorMessage {
+    color: #dc2626;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.metricCard {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    justify-self: center;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.metricHeader {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.metricSubHeader {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+.metricValue {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #16a34a;
+    line-height: 1.1;
+    margin: 0.25rem 0;
+}
+
+.metricLabel {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.25rem;
+}
+
+.metricDateRange {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-top: 0.25rem;
+}
+
+.zeroTonsMessage {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+@media (min-width: 900px) {
+    .resultsContent {
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    .metricCard {
+        justify-self: end;
+    }
+    .chartContainer {
+        min-height: 350px;
+        padding: 1rem;
+    }
+} 

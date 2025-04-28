@@ -1,0 +1,355 @@
+/* Remove page container and main content styles */
+/* .pageContainer { ... } */
+/* .mainContent { ... } */
+
+/* Add specific style for Sales page main content */
+.salesMainContent {
+  flex-grow: 1; /* Allow it to take available space */
+  padding: 2rem; /* Add padding like before */
+  margin-left: var(--sidebar-width, 250px); /* Add margin for the sidebar */
+  min-height: 100vh; /* Ensure it takes full height */
+  /* background-color: #f9f9f9; */ /* Remove light background */
+  transition: margin-left 0.3s ease-in-out; /* Smooth transition */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 1rem; /* Add gap between flex items */
+}
+
+.header h1 {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Remove old button styles */
+/* .addButton { ... } */
+/* .addButton:hover { ... } */
+
+/* Add new container style for centering */
+.centerButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0; /* Add some vertical spacing */
+  width: 100%;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Ensure it's above other content */
+}
+
+.modalCard {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px; /* Limit modal width */
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modalCard h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="number"],
+.formGroup input[type="date"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--gajkesari-red, #E31E24);
+  box-shadow: 0 0 0 2px rgba(227, 30, 36, 0.2);
+}
+
+/* Add style for read-only input */
+.readOnlyInput {
+  background-color: #f0f0f0; /* Light gray background */
+  cursor: not-allowed; /* Indicate it's not interactive */
+  opacity: 0.7;
+}
+
+/* Style for error messages */
+.errorMessage {
+  color: var(--gajkesari-red, #E31E24);
+  background-color: rgba(227, 30, 36, 0.1);
+  border: 1px solid rgba(227, 30, 36, 0.3);
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Style for table search */
+.tableSearchContainer {
+  margin-bottom: 1.5rem; /* Space between search and table */
+}
+
+.searchInputWrapper {
+  position: relative;
+  max-width: 400px; /* Limit search input width */
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem; /* Position icon inside the input */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af; /* Gray icon color */
+  width: 1rem; /* 16px */
+  height: 1rem; /* 16px */
+}
+
+.searchInput {
+  padding-left: 2.5rem; /* Add padding to prevent text overlap with icon */
+  /* Use input styles consistent with the rest of the app */
+}
+
+/* Styles for Tabs */
+.tabsContainer {
+  margin-top: 1.5rem; /* Space below header */
+}
+
+.tabsContent {
+  margin-top: 1rem; /* Space below tab triggers */
+}
+
+.summaryPlaceholder {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Styles for Summary Tab */
+.summaryControls {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 1.5rem; /* Space between control items */
+  align-items: flex-end; /* Align items nicely */
+  margin-bottom: 2rem; /* Space below controls */
+  padding-bottom: 1.5rem; /* Space before border */
+  border-bottom: 1px solid #e0e0e0; /* Separator line */
+}
+
+.summaryControlItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between label and control */
+}
+
+.summarySelectTrigger {
+  width: 250px; /* Adjust width as needed */
+}
+
+.datePickerButton {
+  width: 250px; /* Match select trigger width */
+  justify-content: flex-start; /* Align text left */
+  text-align: left;
+  font-weight: normal;
+}
+
+.summaryDisplayArea {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #fff; /* Change to white background */
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  min-height: 150px; /* Give it some height */
+  display: flex; /* Center loading/error/prompt */
+  justify-content: center;
+  align-items: center;
+}
+
+.summaryResults {
+  width: 100%; /* Take full width inside display area */
+  text-align: left; /* Align results text left */
+}
+
+.summaryResults h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.summaryResults p {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.summaryPrompt {
+  color: #6c757d; /* Muted text color for prompt */
+  font-style: italic;
+}
+
+/* Override loading/error container styles for summary */
+.summaryDisplayArea .loadingContainer,
+.summaryDisplayArea .errorContainer {
+  padding: 1rem; /* Less padding needed inside display area */
+}
+
+/* Ensure dropdown content appears above the modal */
+.dropdownContentAboveModal {
+  z-index: 1100 !important; /* Higher than modal overlay (1050) */
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.modalActions button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cancelButton {
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ccc;
+}
+
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+.saveButton {
+  background-color: var(--gajkesari-red, #E31E24);
+  color: white;
+}
+
+.saveButton:hover {
+  background-color: var(--gajkesari-dark-red, #C41920);
+}
+
+/* Styles for Table Section */
+.tableContainer {
+  margin-top: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures border radius applies to table */
+  background-color: #fff; /* White background for table area */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.loadingContainer,
+.errorContainer,
+.emptyStateContainer {
+  display: flex;
+  flex-direction: column; /* Stack icon/text vertically */
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 200px; /* Give it some minimum height */
+  text-align: center;
+  color: #666; /* Gray text */
+}
+
+.loadingContainer p,
+.errorContainer p,
+.emptyStateContainer p {
+  margin-top: 0.75rem; /* Space between icon and text */
+  font-size: 1rem;
+}
+
+.errorContainer .errorMessage {
+  margin-bottom: 1rem; /* Space between error and retry button */
+  width: 100%;
+  max-width: 400px; /* Limit width of error box */
+}
+
+.errorContainer Button {
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Remove margin when sidebar is hidden */
+  .salesMainContent {
+     margin-left: 0;
+     padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+  .modalCard {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  /* Adjust table padding/font on smaller screens if needed */
+  .tableContainer {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Styles to mimic VisitsTable */
+.salesTableFont {
+  /* Assuming Poppins is loaded globally or via globals.css */
+  font-family: 'Poppins', sans-serif; 
+}
+
+.salesTableHeader {
+  background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+} 
